@@ -8,7 +8,7 @@ import styles from "@/styles/Home.module.css";
 
 
 // components
-import { BackgroundImage1, BackgroundImage2, FooterCon, FooterLink, GradientBackgroundCon } from "@/components/QuoteGenerator/QuoteGeneratorElements";
+import { BackgroundImage1, BackgroundImage2, FooterCon, FooterLink, GradientBackgroundCon, QuoteGeneratorCon, QuoteGeneratorInnerCon, QuoteGeneratorTitle, QuoteGeneratorSubtitle, GenerateQuoteButton, GenerateQuoteButtonText } from "@/components/QuoteGenerator/QuoteGeneratorElements";
 
 // assets
 import LeftCloud from '../assets/cloud-and-thunder.png';
@@ -33,6 +33,7 @@ export default function Home() {
           alt="cloud-background1"
         />
 
+        {/* Background images */}
         <BackgroundImage2
           src={RightCloud}
           height="300"
@@ -40,12 +41,36 @@ export default function Home() {
         />
       </GradientBackgroundCon>
 
+      {/* Quote Generator Modal */}
+
+      {/* Quote Generator */ }
+      <QuoteGeneratorCon>
+        <QuoteGeneratorInnerCon>
+          <QuoteGeneratorTitle>
+            Daily Inspiration Generator
+          </QuoteGeneratorTitle>
+          <QuoteGeneratorSubtitle>
+            Looking for a splash of inspiration?
+            Generate a quote card with a random
+            inspirational quote provided by <FooterLink href="https://zenquotes.io/" target="_blank">ZenQuotes Api</FooterLink>
+            <GenerateQuoteButton>
+              <GenerateQuoteButtonText onClick={null}>
+                Make a Quote
+              </GenerateQuoteButtonText>
+            </GenerateQuoteButton>
+          </QuoteGeneratorSubtitle>
+        </QuoteGeneratorInnerCon>
+      </QuoteGeneratorCon>
+
+
+      
+
+      {/* Footer */}
       <FooterCon>
         <>
           Quotes generated: {numQuotes}
           <br/>
-          Developed by Hieu Dang
-          <FooterLink href=""></FooterLink>
+          Developed by <FooterLink href="https://github.com/dhieu24/quote-generator">@Hieu Dang</FooterLink>
         </>
       </FooterCon>
       
